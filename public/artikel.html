@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<head>
+    <html lang="en" class="scroll-smooth">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yayasan Naungan Anak Indonesia - Mempersiapkan generasi anak yang sehat secara fisik, spiritual, dan intelektual.">
+    <meta name="keywords" content="Yayasan, Anak, Kesehatan, Pendidikan, Donasi">
+    <meta name="author" content="Yayasan Naungan Anak Indonesia">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .carousel-item {
+            opacity: 0;
+            /* Start hidden */
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+            /* Show active item */
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .animate-fade-in:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .animate-fade-in:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .animate-fade-in:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .animate-fade-in:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        /* Add some additional styles to make the separator more visually appealing */
+        .border-t {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .h-1 {
+            height: 1px;
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, #0097A7, #002F4E);
+        }
+
+        .rounded {
+            border-radius: 10px;
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .text-gray-600 {
+            color: #4B5563;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        a:focus, button:focus {
+    outline: 2px solid #FFD700; /* Contoh warna kuning */
+}
+@media (max-width: 768px) {
+    .header-box {
+        flex-direction: column;
+    }
+}
+    </style>
+
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/dist/css/output.css" />
+    <title>Yayasan Naungan Anak Indonesia</title>
+
+    <!-- Favicon-->
+    <link rel="shorcut icon" href="assets/icon/icon.png" type="image/x-icon" />
+
+    <!-- Font poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,
+    600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Menu Hamburger-->
+    <link rel="stylesheet" href="./src/dist/css/hamburgers.css" />
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <header class="bg-teal-900 text-white px-2 sticky top-0 z-50">
+        <div class="navbar">
+            <div class="container mx-auto">
+                <div class="navbar-box flex items-center justify-between">
+                    <div class="logo flex items-center gap-x-2">
+                        <img src="assets/logo.png" alt="logo yayasan" class="md:w-16 w-12">
+                        <h1 class="font-semibold sm:text-sm text-xs">
+                            Yayasan Naungan Anak Indonesia
+                        </h1>
+                    </div>
+                    <ul class="menu flex gap-x-7 items-center font-semibold md:static absolute z-10 top-16 left-0 
+                md:flex-row flex-col md:bg-transparent bg-teal-900 md:w-auto w-full">
+                        <li class="py-2"><a href="/index.html" class="hover:text-yellow-300 ">Beranda</a></li>
+                        <li class="py-2"><a href="/public/berita.html" class="hover:text-yellow-300 ">Berita</a></li>
+                        <li class="py-2"><a href="/public/program.html" class="hover:text-yellow-300 ">Program</a></li>
+                        <li class="py-2"><a href="/public/tentang.html" class="hover:text-yellow-300 ">Tentang kami</a></li>
+                    </ul>
+                    <div class="md:hidden block">
+                        <button class="hamburger hamburger--elastic" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner bg-white before:bg-white after:bg-white"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- JS -->
+    <script src="./src/dist/js/script.js"></script>
+
+
+       <!-- Main content container -->
+       <body class="bg-teal-700">
+       <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-10">
+        <div class="flex items-center justify-between p-6">
+         <!-- Image container -->
+         <img alt="Program BINAR" class="w-56 object-cover mt-4" height="400" src="img/foto4.png" width="600"/>
+         <!-- Text content -->
+    <div class="ml-6 flex-1">
+      <h2 class="text-2xl font-bold mb-4">
+        Program BINA JUARA (BINAR)
+      </h2>
+      <p class="text-gray-700 mb-4">
+        Program pemberian beasiswa kuliah S1 selama 4 tahun (sampai lulus) dengan fasilitas asrama, logistik dan pelatihan softskill terpercaya, bantuan berupa finansial yang diberikan kepada pelajar atau mahasiswa untuk membiayai pendidikan mereka. Bantuan ini bisa berupa uang tunai, potongan biaya kuliah, atau bahkan fasilitas lainnya seperti asrama atau buku. Tujuan utama beasiswa adalah untuk memberikan kesempatan bagi individu yang berpotensi namun terkendala masalah finansial untuk melanjutkan pendidikannya
+      </p>
+        </div>
+       </div>
+       <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-10">
+        <div class="flex items-center justify-between p-6">
+         <!-- Image container -->
+         <img alt="Semarak Ramadhan" class="w-56 object-cover mt-4" height="400" src="/img/foto9.jpg" width="600"/>
+         <!-- Text content -->
+    <div class="ml-6 flex-1">
+      <h2 class="text-2xl font-bold mb-4">
+        Semarak Ramadhan 
+      </h2>
+      <p class="text-gray-700 mb-4">
+        Bulan ini penuh berkah dan menjadi momentum bagi umat Muslim untuk meningkatkan ibadah, mempererat tali silaturahmi,Berbagi takjil dan sedekah Ramadhan adalah Program yang diadakan selama di bulan Ramadhan, dengan berbagi takjil dan Sedekah Ramadhan untuk orang-orang yang kurang mampu.
+      </p>
+        </div>
+       </div>
+       <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-10">
+        <div class="flex items-center justify-between p-6">
+         <!-- Image container -->
+         <img alt="tebar hewan qurban" class="w-56 object-cover mt-4" height="400" src="/img/foto10.jpg" width="600"/>
+         <!-- Text content -->
+    <div class="ml-6 flex-1">
+      <h2 class="text-2xl font-bold mb-4">
+        Tebar Hewan Qurban (THR)
+      </h2>
+      <p class="text-gray-700 mb-4">
+        Hari Raya Qurban merupakan momen yang sangat penting bagi umat Islam. Selain sebagai bentuk ibadah, hari raya ini juga menjadi sarana untuk mempererat tali silaturahmi, berbagi kebahagiaan, dan menumbuhkan rasa kepedulian sosial. Salah satunya Program penyebaran hewan qurban dalam bentuk hewan hidup atau distribusi daging qurban di wilayah minim qurban untuk anak-anak dan keluarga tidak mampu.
+      </p>
+        </div>
+       </div>
+       <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-10">
+        <div class="flex items-center justify-between p-6">
+         <!-- Image container -->
+         <img alt="BJC school" class="w-56 object-cover mt-4" height="400" src="/img/foto5-.png" width="600"/>
+         <!-- Text content -->
+    <div class="ml-6 flex-1">
+      <h2 class="text-2xl font-bold mb-4">
+        BEE JUNIOR SCHOOL 
+      </h2>
+      <p class="text-gray-700 mb-4">
+        Sekolah extra hari sabtu/minggu yang di
+dedikasikan oleh para pengurus dan
+volunteer bidang pendidikan anak-anak
+dengan metode yang menyenangkan .
+Dengan target anak-anak dapat
+mengeluarkan potensi terbaiknya untuk
+menggapai cita-citanya.
+      </p>
+        </div>
+       </div>
+       <div class="max-w-4xl mx-auto bg-white shadow-md rounded-lg overflow-hidden mt-10">
+        <div class="flex items-center justify-between p-6">
+         <!-- Image container -->
+         <img alt="gerakan anak sehat" class="w-56 object-cover mt-4" height="400" src="/img/foto7.jpg" width="600"/>
+         <!-- Text content -->
+    <div class="ml-6 flex-1">
+      <h2 class="text-2xl font-bold mb-4">
+       Gerakan Anak Sehat (GAS)
+      </h2>
+      <p class="text-gray-700 mb-4">
+        Program Bakti Sosial di bidang Kesehatan yang diadakan untuk
+memfasilitasi masyarakat dan anak-anak tidak mampu untuk memeriksa
+kondisi kesehatannya. Mulai dari balita
+hingga lansia
+Dengan harapan anak-anak dan
+keluarga tidak mampu mendapatkan
+hak untuk sehat.
+      </p>
+        </div>
+       </div>
+      </body>
+     </html>
+
+  <!--Footer section-->
+  <footer class="bg-teal-950 px-5 py-6 text-white text-center">
+    <div class="flex justify-center mb-4">
+        <img src="assets/logo.png" alt="Logo Yayasan" class="w-16 h-16 mr-2"> <!-- Ganti dengan path logo Anda -->
+    </div>
+    <h2 class="text-lg font-bold text-center mb-4">Yayasan Naungan Anak Indonesia</h2>
+    <div class="text-sm mb-3">
+        <ul class="flex justify-center space-x-5">
+            <li><a href="tel:(+62)895-4050-11240" class="hover:text-yellow-300"><i class="fas fa-phone"></i>
+                    (+62)895-4050-11240</a></li>
+            <li><a href="https://instagram.com/naungananakindonesia" class="hover:text-yellow-300"><i
+                        class="fab fa-instagram"></i> @naungananakindonesia</a></li>
+        </ul>
+        <p class="py-2"><a href="#" class="hover:text-yellow-300">Jln. Venus Barat Raya No.45 Majahlega, Rancasari,
+                Bandung</a></p>
+    </div>
+    <div class="text-xs">
+        &copy; 2024 Yayasan Naungan Anak Indonesia. Semua Hak Dilindungi.
+    </div>
+  </footer>
+</html>
+ </body>
+</html>
+ </body>
+</html>

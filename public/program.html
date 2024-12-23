@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<head>
+    <html lang="en" class="scroll-smooth">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Yayasan Naungan Anak Indonesia - Mempersiapkan generasi anak yang sehat secara fisik, spiritual, dan intelektual.">
+    <meta name="keywords" content="Yayasan, Anak, Kesehatan, Pendidikan, Donasi">
+    <meta name="author" content="Yayasan Naungan Anak Indonesia">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .carousel {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .carousel-item {
+            opacity: 0;
+            /* Start hidden */
+        }
+
+        .carousel-item.active {
+            opacity: 1;
+            /* Show active item */
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-in-left {
+            animation: slideInLeft 1s ease forwards;
+        }
+
+        .slide-in-right {
+            animation: slideInRight 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        .animate-fade-in:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .animate-fade-in:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .animate-fade-in:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .animate-fade-in:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        /* Add some additional styles to make the separator more visually appealing */
+        .border-t {
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .h-1 {
+            height: 1px;
+        }
+
+        .bg-gradient-to-r {
+            background-image: linear-gradient(to right, #0097A7, #002F4E);
+        }
+
+        .rounded {
+            border-radius: 10px;
+        }
+
+        .shadow-md {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .text-gray-600 {
+            color: #4B5563;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+
+        .font-semibold {
+            font-weight: 600;
+        }
+
+        .mt-2 {
+            margin-top: 0.5rem;
+        }
+
+        a:focus, button:focus {
+    outline: 2px solid #FFD700; /* Contoh warna kuning */
+}
+@media (max-width: 768px) {
+    .header-box {
+        flex-direction: column;
+    }
+}
+
+@keyframes fadeIn {
+      from {
+          opacity: 0;
+          transform: translateY(20px);
+      }
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  .animate-fade-in {
+      animation: fadeIn 0.5s ease-in-out forwards;
+  }
+
+  .card {
+      opacity: 0; /* Mulai dengan transparansi */
+      animation: fadeIn 0.5s ease-in-out forwards; /* Tambahkan animasi */
+      animation-delay: 0.2s; /* Delay untuk setiap card */
+  }
+
+  .card:nth-child(1) { animation-delay: 0.2s; }
+  .card:nth-child(2) { animation-delay: 0.4s; }
+  .card:nth-child(3) { animation-delay: 0.6s; }
+  .card:nth-child(4) { animation-delay: 0.8s; }
+  .card:nth-child(5) { animation-delay: 1s; }
+  .card:nth-child(6) { animation-delay: 1.2s; }
+
+  .card {
+      transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Transisi halus */
+  }
+
+  .card:hover {
+      transform: scale(1.05); /* Membesarkan elemen saat hover */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan saat hover */
+      background-color: #0097A7; /* Mengubah warna latar belakang saat hover */
+  }
+    </style>
+
+
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/dist/css/output.css" />
+    <title>Yayasan Naungan Anak Indonesia</title>
+
+    <!-- Favicon-->
+    <link rel="shorcut icon" href="assets/icon/icon.png" type="image/x-icon" />
+
+    <!-- Font poppins-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,
+    600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <!-- Menu Hamburger-->
+    <link rel="stylesheet" href="./src/dist/css/hamburgers.css" />
+
+</head>
+
+<body>
+    <!--Navbar-->
+    <header class="bg-teal-900 text-white px-2 sticky top-0 z-50">
+        <div class="navbar">
+            <div class="container mx-auto">
+                <div class="navbar-box flex items-center justify-between">
+                    <div class="logo flex items-center gap-x-2">
+                        <img src="assets/logo.png" alt="logo yayasan" class="md:w-16 w-12">
+                        <h1 class="font-semibold sm:text-sm text-xs">
+                            Yayasan Naungan Anak Indonesia
+                        </h1>
+                    </div>
+                    <ul class="menu flex gap-x-7 items-center font-semibold md:static absolute z-10 top-16 left-0 
+                md:flex-row flex-col md:bg-transparent bg-teal-900 md:w-auto w-full">
+                        <li class="py-2"><a href="/index.html" class="hover:text-yellow-300 ">Beranda</a></li>
+                        <li class="py-2"><a href="/public/berita.html" class="hover:text-yellow-300 ">Berita</a></li>
+                        <li class="py-2"><a href="/public/program.html" class="hover:text-yellow-300 ">Program</a></li>
+                        <li class="py-2"><a href="/public/tentang.html" class="hover:text-yellow-300 ">Tentang kami</a></li>
+                    </ul>
+                    <div class="md:hidden block">
+                        <button class="hamburger hamburger--elastic" type="button">
+                            <span class="hamburger-box">
+                                <span class="hamburger-inner bg-white before:bg-white after:bg-white"></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- JS -->
+    <script src="./src/dist/js/script.js"></script>
+
+
+<!-- Program Yayasan -->
+<div class="section bg-white rounded-lg shadow-lg mb-10 p-6 text-center">
+    <h2 class="text-3xl font-bold mb-5 text-teal-600">Program Yayasan</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-5">
+        <div class="card bg-teal-950 text-white rounded-lg p-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-800">
+            <img src="/public/img/foto4-.png" alt="Program 1" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-xl font-bold"><i class="fas fa-graduation-cap mr-2"></i>Program Beasiswa</h3>
+            <hr class="my-2 border-white"> <!-- Garis pemisah -->
+            <p class="text-sm">Memberikan beasiswa kepada siswa yang berprestasi dan kurang mampu Sebanyak +/- 12
+                siswa telah tergabung dari penjuru
+                jawa barat.</p>
+        </div>
+        <div class="card bg-teal-950 text-white rounded-lg p-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-800">
+            <img src="/public/img/foto13.png" alt="Program 2" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-xl font-bold"><i class="fas fa-book mr-2"></i>Program Kemanusiaan</h3>
+            <hr class="my-2 border-white"> <!-- Garis pemisah -->
+            <p class="text-sm">Memberikan santunan kepada anak yang kurang prasejahtera menerima manfaat
+                makanan sehat dari para donatur.</p>
+        </div>
+        <div class="card bg-teal-950 text-white rounded-lg p-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-800">
+            <img src="/public/img/foto14.png" alt="Program 3" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-xl font-bold"><i class="fas fa-hands-helping mr-2"></i>Program Kemanusiaan</h3>
+            <hr class="my-2 border-white"> <!-- Garis pemisah -->
+            <p class="text-sm">Program berbagi setiap minggu
+                pada hari jumat. Harapannya
+                dapat memuliakan anak-anak
+                yatim, dhuafa, terlantar dan
+                disabilitas menerima manfaat
+                makanan sehat dari para donatur..</p>
+        </div>
+        <div class="card bg-teal-950 text-white rounded-lg p-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-800">
+            <img src="/public/img/foto9.jpg" alt="Program 4" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-xl font-bold"><i class="fas fa-tree mr-2"></i>Program Semarak Ramadhan</h3>
+            <hr class="my-2 border-white"> <!-- Garis pemisah -->
+            <p class="text-sm">Memberikan kesadaran dan edukasi tentang pentingnya menjaga lingkungan dan mengurangi dampak buruknya.</p>
+        </div>
+        <div class="card bg-teal-950 text-white rounded-lg p-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-800">
+            <img src="/public/img/foto16.png" alt="Program 5" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-xl font-bold"><i class="fas fa-medkit mr-2"></i>Program LOGistik BUka dan SahUR</h3>
+            <hr class="my-2 border-white"> <!-- Garis pemisah -->
+            <p class="text-sm">Program berbagi makanan/
+                logistik untuk sahur dan
+                berbuka bagi para santri
+                selama bulan Ramadhan
+                dan Shaum Senin Kamis.</p>
+        </div>
+        <div class="card bg-teal-950 text-white rounded-lg p-4 transform transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:bg-teal-800">
+            <img src="/public/img/foto10.jpg" alt="Program 6" class="w-full h-48 object-cover rounded-t-lg">
+            <h3 class="text-xl font-bold"><i class="fas fa-utensils mr-2"></i>Program Tebar Hewan Qurban [ THR ]</h3>
+            <hr class="my-2 border-white"> <!-- Garis pemisah -->
+            <p class="text-sm">Program penyebaran hewan
+                qurban dalam bentuk hewan
+                hidup atau distribusi daging
+                qurban di wilayah minim qurban
+                untuk anak-anak dan keluarga
+                tidak mampu.</p>
+        </div>
+    </div>
+  </div>
+
+<!-- Footer -->
+<footer class="bg-teal-950 px-5 py-6 text-white text-center">
+  <div class="flex justify-center mb-4">
+      <img src="assets/logo.png" alt="Logo Yayasan" class="w-16 h-16 mr-2"> <!-- Ganti dengan path logo Anda -->
+  </div>
+  <h2 class="text-lg font-bold text-center mb-4">Yayasan Naungan Anak Indonesia</h2>
+  <div class="text-sm mb-3">
+      <ul class="flex justify-center space-x-5">
+          <li><a href="tel:(+62)895-4050-11240" class="hover:text-yellow-300"><i class="fas fa-phone"></i>
+                  (+62)895-4050-11240</a></li>
+          <li><a href="https://instagram.com/naungananakindonesia" class="hover:text-yellow-300"><i
+                      class="fab fa-instagram"></i> @naungananakindonesia</a></li>
+      </ul>
+      <p class="py-2"><a href="#" class="hover:text-yellow-300">Jln. Venus Barat Raya No.45 Majahlega, Rancasari,
+              Bandung</a></p>
+  </div>
+  <div class="text-xs">
+      &copy; 2024 Yayasan Naungan Anak Indonesia. Semua Hak Dilindungi.
+  </div>
+</footer>
+
+
+<script>
+  let currentIndex = 0;
+  const slideInterval = 5000; // Interval in milliseconds (5 seconds)
+
+  function showSlide(index) {
+      const slides = document.querySelectorAll('.carousel-item');
+      const totalSlides = slides.length;
+
+      // Looping through slides
+      if (index >= totalSlides) {
+          currentIndex = 0;
+      } else if (index < 0) {
+          currentIndex = totalSlides - 1;
+      } else {
+          currentIndex = index;
+      }
+
+      // Update the carousel
+      slides.forEach((slide, i) => {
+          slide.classList.remove('active');
+          if (i === currentIndex) {
+              slide.classList.add('active');
+          }
+      });
+
+      // Move the carousel
+      const offset = -currentIndex * 100;
+      document.querySelector('.carousel-inner').style.transform = `translateX(${offset}%)`;
+  }
+
+  // Navigation functions
+  function nextSlide() {
+      showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+      showSlide(currentIndex - 1);
+  }
+
+  // Auto-slide functionality
+  setInterval(() => {
+      nextSlide();
+  }, slideInterval);
+
+  // Initialize the first slide
+  showSlide(currentIndex);
+
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Mencegah pengiriman formulir default
+  // Tampilkan pesan sukses
+  document.getElementById('successMessage').classList.remove('hidden');
+  // Reset formulir
+  this.reset();
+});
+</script>
+</body>
+</html>
